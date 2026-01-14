@@ -1,0 +1,416 @@
+/* ===================================
+   FINAL CTA & CONTACT SECTION
+   Professional, Trust-focused, Glass Design
+   =================================== */
+
+.final-cta-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    overflow: hidden;
+    
+    /* Dark Gradient Background */
+    background: linear-gradient(135deg, 
+        oklch(35% 0.15 328) 0%,      /* Dark Primary */
+        oklch(28% 0.12 305) 50%,     /* Deep Purple */
+        oklch(32% 0.08 165) 100%     /* Dark Secondary Alt */
+    );
+}
+
+/* Subtle Vignette */
+.final-cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+}
+
+/* Grain Texture Overlay */
+.final-cta-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+.final-cta-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header */
+.final-cta-header {
+    text-align: center;
+    margin-bottom: 64px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final-cta-headline {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.final-cta-subheadline {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Two Column Layout */
+.final-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Glass Container */
+.cta-glass-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cta-glass-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 12px 48px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Contact Form Column */
+.cta-form-column h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cta-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.cta-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cta-form-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-form-input,
+.cta-form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.cta-form-input::placeholder,
+.cta-form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.cta-form-input:focus,
+.cta-form-textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.cta-form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Primary CTA Button */
+.cta-primary-button {
+    width: 100%;
+    padding: 18px 32px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 20px rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-primary-button:hover {
+    background: var(--color-primary-hover);
+    box-shadow: 
+        0 8px 32px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    transform: translateY(-2px);
+}
+
+.cta-primary-button:hover::before {
+    opacity: 1;
+}
+
+.cta-primary-button:focus {
+    outline: none;
+    box-shadow: 
+        0 8px 32px rgba(255, 255, 255, 0.2),
+        0 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+.cta-primary-button:active {
+    transform: translateY(0);
+}
+
+/* Secondary Link */
+.cta-secondary-link {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cta-secondary-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Calendly Column */
+.cta-calendly-column h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.cta-calendly-subline {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+}
+
+.cta-calendly-wrapper {
+    position: relative;
+    min-height: 600px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.calendly-inline-widget {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* Loading State */
+.cta-calendly-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.cta-calendly-loading::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile Sticky CTA */
+.mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-sticky-cta .cta-primary-button {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .final-cta-section {
+        padding: 80px 0 120px;
+    }
+    
+    .final-cta-container {
+        padding: 0 24px;
+    }
+    
+    .final-cta-header {
+        margin-bottom: 48px;
+    }
+    
+    .final-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .cta-glass-box {
+        padding: 32px;
+    }
+    
+    .cta-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .mobile-sticky-cta {
+        display: block;
+    }
+}
+
+@media (max-width: 640px) {
+    .final-cta-section {
+        padding: 60px 0 100px;
+    }
+    
+    .final-cta-header {
+        margin-bottom: 32px;
+    }
+    
+    .final-cta-headline {
+        margin-bottom: 16px;
+    }
+    
+    .cta-glass-box {
+        padding: 24px;
+        border-radius: 20px;
+    }
+    
+    .cta-calendly-wrapper {
+        min-height: 500px;
+    }
+    
+    .calendly-inline-widget {
+        height: 500px;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .cta-glass-box,
+    .cta-form-input,
+    .cta-form-textarea,
+    .cta-primary-button,
+    .cta-secondary-link {
+        transition: none;
+    }
+    
+    .cta-primary-button:hover {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .cta-glass-box {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .cta-form-input,
+    .cta-form-textarea {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Focus Visible (Keyboard Navigation) */
+.cta-form-input:focus-visible,
+.cta-form-textarea:focus-visible,
+.cta-primary-button:focus-visible,
+.cta-secondary-link:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}

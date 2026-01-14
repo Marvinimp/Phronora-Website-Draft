@@ -1,0 +1,306 @@
+/* Benefits Section - Tabbed Bento Grid */
+
+.benefits-section {
+    position: relative;
+    background: var(--color-bg-page);
+    padding: 120px 0;
+}
+
+.benefits-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Section Header */
+.benefits-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.benefits-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.benefits-headline {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.benefits-subline {
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Tab Control (Segmented Control) */
+.benefits-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 6px;
+    border-radius: 16px;
+    border: 1px solid var(--color-border-subtle);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits-tab {
+    flex: 1;
+    padding: 14px 28px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.benefits-tab:hover {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.benefits-tab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Active Tab States */
+.benefits-tab[data-target="wissensträger"][aria-selected="true"] {
+    background: color-mix(in oklch, var(--color-primary) 12%, transparent);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.benefits-tab[data-target="unternehmen"][aria-selected="true"] {
+    background: color-mix(in oklch, var(--color-secondary) 12%, transparent);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* Bento Grid Container */
+.benefits-grid-wrapper {
+    position: relative;
+    min-height: 600px;
+}
+
+.benefits-grid {
+    display: grid;
+    gap: 24px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.benefits-grid[aria-hidden="false"] {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* Mobile: 1 Column */
+.benefits-grid {
+    grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 3 Columns */
+@media (min-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+}
+
+/* Benefit Cards */
+.benefit-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.benefit-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.04);
+    transform: translateY(-4px);
+}
+
+/* Hero Tile (spans multiple columns/rows) */
+.benefit-card--hero {
+    padding: 48px;
+}
+
+/* Mobile: Hero takes full width */
+.benefit-card--hero {
+    grid-column: 1 / -1;
+}
+
+/* Tablet: Hero spans 2 columns */
+@media (min-width: 768px) {
+    .benefit-card--hero {
+        grid-column: span 2;
+    }
+}
+
+/* Desktop: Hero spans 2 columns and 2 rows */
+@media (min-width: 1024px) {
+    .benefit-card--hero {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+/* Card Icon */
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.benefit-card--hero .benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 28px;
+}
+
+/* Icon Colors based on Grid */
+.benefits-grid[data-group="wissensträger"] .benefit-icon {
+    background: color-mix(in oklch, var(--color-primary) 15%, transparent);
+    color: var(--color-primary);
+}
+
+.benefits-grid[data-group="unternehmen"] .benefit-icon {
+    background: color-mix(in oklch, var(--color-secondary) 15%, transparent);
+    color: var(--color-secondary);
+}
+
+.benefit-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.benefit-card--hero .benefit-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+/* Card Text */
+.benefit-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.benefit-card--hero .benefit-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.benefit-text {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.benefit-card--hero .benefit-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .benefits-section {
+        padding: 80px 0;
+    }
+
+    .benefits-container {
+        padding: 0 24px;
+    }
+
+    .benefits-headline {
+        font-size: 36px;
+    }
+
+    .benefits-subline {
+        font-size: 18px;
+    }
+
+    .benefits-tabs {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .benefit-card--hero {
+        padding: 32px 24px;
+    }
+
+    .benefit-card--hero .benefit-title {
+        font-size: 26px;
+    }
+
+    .benefit-card--hero .benefit-text {
+        font-size: 16px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .benefits-grid,
+    .benefit-card,
+    .benefits-tab {
+        transition: none;
+    }
+
+    .benefit-card:hover {
+        transform: none;
+    }
+}
