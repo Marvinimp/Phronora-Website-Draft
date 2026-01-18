@@ -368,7 +368,7 @@ const contentTemplates = {
     settings: `
         <div class="content-header">
             <h2 class="content-title">Einstellungen</h2>
-            <p class="content-subtitle">Konfiguration Ihrer Implora-Plattform</p>
+            <p class="content-subtitle">Konfiguration Ihrer Phronora-Plattform</p>
         </div>
         
         <div class="settings-container">
